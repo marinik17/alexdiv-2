@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AlexDeveloper Cluj">
+	<meta name="keywords" content="alex div cluj,alexandru marian,ticad,cgr,centru de geografie,cercetare cluj,centru cluj napoca,centru ubbcluj">
+    <meta name="author" content="Marian Alexandru">
+	<!-- My CSS-->
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<!-- Bootstrap library -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<!-- Font awesome library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"/>
+	<!-- Animation library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="shortcut icon" href="logo.ico"/>
+	<link rel="icon" href="logo.ico"/>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<title> My Form</title>
+	<script>
+function _(id){ return document.getElementById(id); }
+function submitForm(){
+	_("mybtn").disabled = true;
+	_("status").innerHTML = 'please wait ...';
+	var formdata = new FormData();
+	formdata.append( "n", _("n").value );
+	formdata.append( "e", _("e").value );
+	formdata.append( "m", _("m").value );
+	var ajax = new XMLHttpRequest();
+	ajax.open( "POST", "example_parser.php" );
+	ajax.onreadystatechange = function() {
+		if(ajax.readyState == 4 && ajax.status == 200) {
+			if(ajax.responseText == "success"){
+				_("my_form").innerHTML = '<h2>Thank you '+_("n").value+', your message has been sent.</h2>';
+			} else {
+				_("status").innerHTML = ajax.responseText;
+				_("mybtn").disabled = false;
+			}
+		}
+	}
+	ajax.send( formdata );
+}
+</script>
+
+</head>
+</body>
+<div class="col-md-6 col-sm-6 container" style="color:black; text-align:left;">
+				<form id="my_form" onsubmit="submitForm(); return false;">
+				<input id="n" class="form-control" placeholder="Your name" required>
+				<input id="e" class="form-control" placeholder="Email Address" type="email" required>
+				<textarea id="m" class="form-control" placeholder="write your message here" rows="5" required></textarea>
+				<button class="btn btn-default" id="mybtn" type="submit" value=""> Submit <span id="status"></span></button>
+				</form>
+				</div>
+</body>
+</html>

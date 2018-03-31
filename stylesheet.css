@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Tangerine);
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+body{
+	font-family:'Poppins', sans-serif;
+}
+.nav.navbar-nav li a{
+      color:white !important;
+    }
+	.nav.navbar-nav li a:hover{
+      color:orange !important;
+    }
+
+h1,h2,h3,h4,h5,h6{
+	color:orange !important;
+}
+p .quoet {
+	font-family:'Tangerine',cursive; 
+	font-size:30px;
+}
+#home {
+  min-height:300px;
+   
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    padding-bottom: 60px;
+}
+#testimonial{
+	background:#f1f1f1;
+	padding:50px 0 30px 0;
+	text-align:center;
+}
+#testimonial p{
+	font-size:20px;
+	font-family:'Josefin Sans';
+	text-align:justify;
+	color:#000;
+}
+#testimonial p.costumer{
+	font-size:15px;
+	color:#666;
+}
+#portofolio {
+    background-color:white;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    text-shadow: 1px 2px 5px black;
+    padding-bottom: 60px;
+	color:black;
+}
+
+#about {
+    background: url(img/about1.jpg) 50% 0 fixed;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    text-shadow: 1px 2px 5px black;
+    padding-bottom: 60px;
+	color:white;
+}
+#about img{
+	
+	margin-right:-10px;
+}
+#about .showcase-left{
+	margin-top:90px;
+}
+#contact {
+	
+    background: url(img/tram1.jpg) 50% 0 fixed;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    text-shadow: 2px 2px 5px black;
+    padding-bottom: 60px;
+	color:black;
+}
+  .thick-green-border {
+    border-color: grey;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 30%;
+  }
+
+  .smaller-image {
+    width: 300px;}
+
+section{padding-top:40px;}
+footer{
+	background-color:black !important;
+	color:white !important;
+	height:20px;
+}
+iframe{
+	width:100%;
+	height:350px;
+	border:0;
+}

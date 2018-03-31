@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AlexDeveloper Cluj">
+	<meta name="keywords" content="alex div cluj,alexandru marian,ticad,cgr,centru de geografie,cercetare cluj,centru cluj napoca,centru ubbcluj">
+    <meta name="author" content="Marian Alexandru">
+	<!-- My CSS-->
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<!-- Bootstrap library -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<!-- Font awesome library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"/>
+	<!-- Animation library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="shortcut icon" href="logo.ico"/>
+	<link rel="icon" href="logo.ico"/>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script>
+function _(id){ return document.getElementById(id); }
+function submitForm(){
+	_("mybtn").disabled = true;
+	_("status").innerHTML = 'please wait ...';
+	var formdata = new FormData();
+	formdata.append( "n", _("n").value );
+	formdata.append( "e", _("e").value );
+	formdata.append( "m", _("m").value );
+	var ajax = new XMLHttpRequest();
+	ajax.open( "POST", "example_parser.php" );
+	ajax.onreadystatechange = function() {
+		if(ajax.readyState == 4 && ajax.status == 200) {
+			if(ajax.responseText == "success"){
+				_("my_form").innerHTML = '<h2>Thank you '+_("n").value+', your message has been sent.</h2>';
+			} else {
+				_("status").innerHTML = ajax.responseText;
+				_("mybtn").disabled = false;
+			}
+		}
+	}
+	ajax.send( formdata );
+}
+</script>
+
+	
+	<title> Alex Developer</title>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+       <nav class="navbar navbar-inverse navbar-fixed-top fadeInUp animated">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#home"><img src="http://cgr.centre.ubbcluj.ro/img/thumb/logo.jpg" width="40" alt="Adiv logo"/></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about"> ABOUT</a></li>
+        <li><a href="#portofolio"> PORTOFOLIO</a></li>                       
+        <li><a  href="#contact"> CONTACT</a></li>  
+		
+      </ul>
+	   
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<script>
+	$(document).ready(function(){
+  $('.nav li a').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    && location.hostname == this.hostname) {
+      var $target = $(this.hash);
+      $target = $target.length && $target
+      || $('[name=' + this.hash.slice(1) +']');
+      if ($target.length) {
+        var targetOffset = $target.offset().top;
+        $('html,body')
+        .animate({scrollTop: targetOffset}, 2000);
+       return true;
+      }
+    }
+  });
+});
+	</script>
+<section id="home" data-speed="3" data-type="background" class="page">
+        <div class="container">
+            <div class="content text-center">
+                <div class="heading">
+				  <div class="jumbotron  pulse animated">
+					<h1> Alex Developer</h1>
+                    <h2>Stay connected on our social networks</h2>
+                    <div class="border bg-green"></div>
+                    <p class="text-center">Find out our latest news and usefull info for your projects. Feel free to use it.<p></div>
+				   </div>
+                <div class="row">
+                    <div class="facebook col-md-3 bounceInLeft animated">
+                        <a class="btn btn-primary btn-block" href="https://www.facebook.com/AlexDeveloperCluj/" target="_blank"><span><i class="fa fa-facebook-square fa-2x" aria-hidden="true"> Facebook</i></span></a>
+                        </div>
+                   
+					<div class="linkedin col-md-3 bounceInDown animated">
+                        <a class="btn btn-info btn-block" href="https://www.linkedin.com/in/alexandru-marian-60a58b10a/" target="_blank"><span><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"> Linkedin</i></span></a>
+                        </div>
+						
+                    <div class="github col-md-3 bounceInDown animated">
+                        <a class="btn  btn-default btn-block" href="https://github.com/marinik17" target="_blank"><span><i class="fa fa-github-square fa-2x" aria-hidden="true"> GitHub</i></span></a>
+                        </div>
+                    
+                  
+				  <div class="free-code col-md-3 bounceInRight animated">
+                        <a class="btn  btn-success btn-block" href="https://www.freecodecamp.com/marinik17" target="_blank"><span><i class="fa fa-free-code-camp fa-2x" aria-hidden="true"> FreeCodeCamp</i></span></a>
+                        </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.container -->
+    </section>
+	
+	<section  id="testimonial">
+	<div class="container">
+	<p><i class="fa fa-quote-right"></i> Passion. Promptitude. Dedication. 
+	Three qualities we found in Alex from the very beginning of our collaboration in 2014. Working with him on our three websites has been a truly positive
+	experience. Not only did he deliver everything we agreed upon, but he also understood our needs and came up with new ideas and solutions no matter 
+	whether he had to create a brand new website or upgrade a website to make it more attractive, accessible, and mobile responsive. We appreciate his 
+	commitment and problem-solving attitude and we will definitely continue to rely on him to maintain our websites, perform upgrades, updates and system 
+	backups. Thank you, Alex, for your great work and excellent collaboration! <i class="fa fa-quote-left"></i></p>
+	<p class="costumer">- Lelia Papp</br>
+Centre for Regional Geography, Babeş-Bolyai University
+</p>
+	</div>
+	</section>
+<section id="about" data-type="background" class="page">
+        <div class="container">
+            <div class="content text-center">
+                <div class="heading slideInRight animated">
+                    <h2  style="visibility: visible; ">ABOUT</h2>
+                    <div class="border bg-maroon wow fadeIn animated" style="visibility: visible; -webkit-animation: fadeIn;"></div>
+                 </div>
+                <!-- /.heading -->
+            </div>
+            <!-- /.content -->
+            
+			<div class="row">
+			<div class="col-md-6 col-sm-6 text-justify" >
+			<div class="showcase-left">
+					<h3>Alexandru MARIAN </h3>
+                    <span>Junior Front-end Developer</span>
+					<p></p>
+                    <p>I love nature, people and last but not least computers. Hence my passion for coding, virtual environment exploration and daily confrontations. The biggest project that I worked on in 2014 was building a new site in HTML5 and CSS3 for Center for Regional Geography  Cluj-Napoca, Romania.</p>
+                <p class="text-left slideInLeft animated" style="font-family:Tangerine,Cursive; font-size:30px">"The only way to do great work is to love what you do." - Steve Jobs</p>
+               
+				</div>
+				</div>
+				
+				<div class="col-md-6 col-sm-6 container text-right " >
+				<div class="showcase-right">
+                    <img  src="img/me1.png" alt="Alex`sPic" width="80%" >
+                   </div>
+                </div>
+            </div>			
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /#about -->
+<section id="portofolio" data-type="background">
+        <div class="container">
+            <div class="content text-center">
+                <div class="heading">
+                    <h2 >PORTOFOLIO</h2>
+                   <div class="row">
+                <div class="col-md-4 col-sm-4 container text-center site1" >
+                    <a href="http://cgr.centre.ubbcluj.ro" target="_blank"><img class="smaller-image img-thumbnail" src="img/page.jpg" alt="thumb1"></a>
+						<div class="caption"><p>CGR website. This is my first biggest project made in 2014. </p>
+						</div>
+					 </div>
+						
+				<div class="col-md-4 col-sm-4 container text-center site2">
+                    <a href="https://codepen.io/marinik17/full/OmqGbw" target="_blank"><img class ="smaller-image img-thumbnail" src="img/page2.jpg" alt="Tribute Page"></a>
+						<div class="caption"><p> This is my first tribute page build in codepen.io</p>
+						</div>
+					 </div>
+						
+				<div class="col-md-4 col-sm-4 container text-center site3">
+                    <a href="https://codepen.io/marinik17/full/vZxaYx" target="_blank"><img class ="smaller-image img-thumbnail" src="img/page3.jpg" alt="Quote Machine"></a>
+                    <div class="caption"><p> This is my Quote Random Machine build in codepen.io</p>
+						</div>
+                     </div>
+                
+            </div>
+			 <div class="row">
+                <div class="col-md-4 col-sm-4 container text-center site4">
+                    <a href="https://codepen.io/marinik17/full/MoPbQJ/" target="_blank"><img class="smaller-image img-thumbnail" src="img/site4.jpg" alt="Weather App site"></a>
+						<div class="caption"><p>This is my Weather App build in codepen.io </p>
+						</div>
+					 </div>
+									
+				<div class="col-md-4 col-sm-4 container text-center site5">
+                    <a href="https://codepen.io/marinik17/full/bRJbaL" target="_blank"><img class ="smaller-image img-thumbnail" src="img/site6.jpg" alt="TV Twitch"></a>
+                    <div class="caption"><p> This is my Twitch TV API build in codepen.io</p>
+						</div>
+                     </div>
+					 
+					 <div class="col-md-4 col-sm-4 container text-center site6">
+                    <a href="http://rrrs.reviste.ubbcluj.ro/" target="_blank"><img class ="smaller-image img-thumbnail" src="img/RRRS.jpg" alt="RRRS website"></a>
+						<div class="caption"><p> Romanian Review of Regional Studies (RRRS)</p>
+						</div>
+					 </div>
+                
+            </div>
+            <div class="row">
+                
+                <div class="col-md-9 col-sm-6 text">
+                    <p>More projects will be placed here.</p></div>
+			</div>
+			</div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /#portofolio -->
+<section id="contact" data-type="background">
+        <div class="container">
+            <div class="content text-center">
+				<div class="heading">
+                    <h2 class="wow fadeInDown animated">CONTACT</h2>
+                   
+                </div>
+                <!-- /.heading -->    
+
+        
+	 <div class="row">
+	 <!--<div class="col-md-6 col-sm-6 container">
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAlexDeveloperCluj%2F&tabs=messages&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>				
+     </div> -->  
+	 <div class="col-md-2 col-sm-2" style="color:white; text-align:left;">
+	 </div>
+	 <div class="col-md-4 col-sm-4 info" style="color:white; text-align:left;">
+                   
+					<span><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></span><strong> +40 752 654 976</strong></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p><span><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></span><strong> E-mail: </strong><strong><a href="mailto:hello@alexdiv.com">hello@alexdiv.com </a></strong><br />
+					</p>
+					<p></p>
+					<p></p>
+					<p></p>
+                </div>
+				
+<div class="col-md-6 col-sm-6 text-left" style="color:black;">
+				<form id="my_form" onsubmit="submitForm(); return false;">
+				<input id="n" class="form-control" placeholder="Name" required>
+				<input id="e" class="form-control" placeholder="Email" type="email" required>
+				<textarea id="m" class="form-control" placeholder="Message" rows="5" required></textarea>
+				<button class="btn btn-info" id="mybtn" type="submit" value=""><span><i class="fa fa-send "></i></span> Submit <span id="status"></span></button>
+				</form>
+				</div>	
+					</div>
+					</div>
+					</div>
+        <!-- /.container -->
+    </section>
+	<!-- /#contact -->
+	<footer class="text-center">
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105164937-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<strong>Alex Developer Copyright &copy; 2017 </strong>
+	</footer> 
+<!--Start Cookie Script-->
+<script type="text/javascript" charset="UTF-8" src="http://chs03.cookie-script.com/s/4f7b53bade37bda80936d2e6769b5857.js"></script>
+<!--End Cookie Script-->	
+
+</body>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/animation.js"></script>
+
+</html>
